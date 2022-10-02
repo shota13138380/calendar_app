@@ -1,4 +1,7 @@
-<%= link_to 'イベント追加', new_event_path %>
+<%= link_to new_event_path do %>
+  <i class="fa-regular fa-pen-to-square"></i>
+  <%= 'イベント追加' %>
+<% end %>
 
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
