@@ -1,13 +1,12 @@
-<%= link_to new_event_path do %>
-  <i class="fa-regular fa-pen-to-square"></i>
-  <%= 'イベント追加' %>
-<% end %>
-
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
   <% events.each do |event| %>
-  <div>
+  <div class="event_name">
     <%= event.title %>
   </div>
   <% end %>
+<% end %>
+
+<%= link_to new_event_path, class: 'event-btn' do %>
+  <span class='event-btn-text'><i class="fa-regular fa-pen-to-square"></i><%= '予定を追加' %></span>
 <% end %>
