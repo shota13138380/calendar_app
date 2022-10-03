@@ -1,21 +1,39 @@
+/* カレンダー部分 */
 .calendar-heading{
+  text-align: center;
   font-size: 60px;
+  line-height: 60px;
 }
-
+.calendar-heading a{
+  color: black;
+}
+.calendar-heading a:hover{
+  color: gray;
+}
 .wday-0 {
   color: red;
-  background-color: rgb(255, 223, 223);
+  background-color: #ffe3e1;
 }
 .wday-6 {
   color: blue;
-  background-color: rgb(223, 223, 255);
+  background-color: #ecefff;
 } 
+.day:hover {
+  background-color: aquamarine;
+}
+
+.event_count{
+  color: black;
+}
+li{
+  list-style: none;
+}
 .event_name{
   color: black;
 }
 
+/* 予定追加ボタン */
 .event-btn {
-  width: 120px;
   background: #3ccace;
   text-align: center;
   text-decoration: none;

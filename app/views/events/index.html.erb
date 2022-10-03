@@ -1,11 +1,38 @@
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
+  <% unless events.blank? %>
+    <div class="event_count" >
+      <%= "#{events.length}件の予定" %>
+    </div>
+  <% end %>
   <% events.each do |event| %>
   <div class="event_name">
-    <%= event.title %>
+    <ul class="show-lists">
+      <li><%= event.title %></li>
+    </ul>
   </div>
   <% end %>
 <% end %>
+
+<h1>今後の予定</h1>
+<table class="table sm table-striped">
+  <thead>
+    <tr>
+      <th scope="col">予定</th>
+      <th scope="col">日付</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event|%>
+      <% unless event.start_time.to_date.past? %>
+        <tr>
+          <td><%= event.title %></td>
+          <td><%= event.start_time.to_date %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to new_event_path, class: 'event-btn' do %>
   <span class='event-btn-text'><i class="fa-regular fa-pen-to-square"></i><%= '予定を追加' %></span>
