@@ -1,5 +1,6 @@
 /* カレンダー部分 */
 .calendar-heading{
+  margin: 15px;
   text-align: center;
   font-size: 60px;
   line-height: 60px;
@@ -44,6 +45,19 @@ li{
 }
 .hidden{
   display: none;
+}
+.close_btn{
+  font-size: 10px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 0 5px;
+  border: solid 1px gray;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px gray;
+}
+.close_btn:hover {
+  box-shadow: none;
 }
 
 /* 予定追加ボタン */

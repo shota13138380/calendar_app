@@ -8,9 +8,12 @@ window.addEventListener('load', function(){
       pullDownButton.firstElementChild.style.display = 'block';
     })
 
-    pullDownButton.addEventListener('mouseout', function(){
-      pullDownButton.firstElementChild.style.display = 'none';
+    const closeButton = document.getElementsByClassName("close_btn")
+    const closeButtons = Array.from(closeButton)
+    closeButtons.forEach(function(closeButton) {
+      closeButton.addEventListener('click', function() {
+        pullDownButton.firstElementChild.style.display = 'none';
+      })
     })
-
   })
 })

@@ -8,6 +8,7 @@
         <% events.each do |event| %>
           <li><%= event.title %></li>
         <% end %>
+        <div class="close_btn"><i class="fa-solid fa-xmark"></i></div>
       </ul>
     </div>
   <% end %>
@@ -26,7 +27,7 @@
       <% unless event.start_time.to_date.past? %>
         <tr>
           <td><%= event.title %></td>
-          <td><%= event.start_time.to_date %></td>
+          <td><%= "#{event.start_time.month}月#{event.start_time.day}日" %></td>
         </tr>
       <% end %>
     <% end %>
