@@ -18,18 +18,24 @@
 <table class="table sm table-striped">
   <thead>
     <tr>
-      <th scope="col">予定</th>
-      <th scope="col">日付</th>
-      <th scope="col">内容</th>
+      <th scope="col" style="width: 15%">予定</th>
+      <th scope="col" style="width: 15%">日付</th>
+      <th scope="col" style="width: 60%">内容</th>
+      <th scope="col" style="width: 10%">削除</th>
     </tr>
   </thead>
   <tbody>
     <% @events.each do |event|%>
       <% unless event.start_time.to_date.past? %>
         <tr>
-          <td><%= event.title %></td>
+          <td><%= link_to event.title, edit_event_path(event.id) %></td>
           <td><%= "#{event.start_time.month}月#{event.start_time.day}日" %></td>
           <td><%= event.content %></td>
+          <td class="del_btn">
+            <%= link_to event_path(event.id), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     <% end %>

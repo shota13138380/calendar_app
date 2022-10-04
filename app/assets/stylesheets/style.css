@@ -55,9 +55,21 @@ li{
   border: solid 1px gray;
   border-radius: 5px;
   box-shadow: 2px 2px 4px gray;
+  cursor: pointer;
 }
 .close_btn:hover {
   box-shadow: none;
+}
+
+/* 一覧表示部分 */
+.del_btn{
+  text-align: center;
+}
+.del_btn a{
+  color: gray;
+}
+.del_btn a:hover{
+  color: black;
 }
 
 /* 予定追加ボタン */
@@ -72,14 +84,12 @@ li{
   padding: 15px;
   box-shadow: 2px 2px 4px gray;
 }
-
 .event-btn-text {
   color: #fff;
   display: block;
   font-size: 18px;
   text-decoration: none;
 }
-
 .event-btn:hover {
   box-shadow: none;
 }
