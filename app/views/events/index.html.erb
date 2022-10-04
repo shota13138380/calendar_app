@@ -30,7 +30,7 @@
         <tr>
           <td><%= link_to event.title, edit_event_path(event.id) %></td>
           <td><%= "#{event.start_time.month}月#{event.start_time.day}日" %></td>
-          <td><%= event.content %></td>
+          <td class="event_content"><%= event.content %></td>
           <td class="del_btn">
             <%= link_to event_path(event.id), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
               <i class="fa-solid fa-trash"></i>
