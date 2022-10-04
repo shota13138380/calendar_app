@@ -1,6 +1,9 @@
 /* カレンダー部分 */
+.simple-calendar{
+  height: 650px;
+}
 .calendar-heading{
-  margin: 15px;
+  padding: 15px;
   text-align: center;
   font-size: 60px;
   line-height: 60px;
@@ -62,6 +65,13 @@ li{
 }
 
 /* 一覧表示部分 */
+.future_events{
+  height: calc(100vh - 800px);
+}
+.event-table{
+  height: 100%;
+  overflow: scroll;
+}
 .event_content{
   overflow-wrap: break-word;
 }

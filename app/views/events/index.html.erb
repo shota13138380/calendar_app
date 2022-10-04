@@ -14,33 +14,37 @@
   <% end %>
 <% end %>
 
-<h1>今後の予定</h1>
-<table class="table sm table-striped">
-  <thead>
-    <tr>
-      <th scope="col" style="width: 15%">予定</th>
-      <th scope="col" style="width: 15%">日付</th>
-      <th scope="col" style="width: 60%">内容</th>
-      <th scope="col" style="width: 10%">削除</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @events.each do |event|%>
-      <% unless event.start_time.to_date.past? %>
+<div class="future_events">
+  <h1>今後の予定</h1>
+  <div class="event-table">
+    <table class="table sm table-striped ">
+      <thead>
         <tr>
-          <td><%= link_to event.title, edit_event_path(event.id) %></td>
-          <td><%= "#{event.start_time.month}月#{event.start_time.day}日" %></td>
-          <td class="event_content"><%= event.content %></td>
-          <td class="del_btn">
-            <%= link_to event_path(event.id), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
-              <i class="fa-solid fa-trash"></i>
-            <% end %>
-          </td>
+          <th scope="col" style="width: 15%">予定</th>
+          <th scope="col" style="width: 15%">日付</th>
+          <th scope="col" style="width: 60%">内容</th>
+          <th scope="col" style="width: 10%">削除</th>
         </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
+      <tbody>
+        <% @events.each do |event|%>
+          <% unless event.start_time.to_date.past? %>
+            <tr>
+              <td><%= link_to event.title, edit_event_path(event.id) %></td>
+              <td><%= "#{event.start_time.month}月#{event.start_time.day}日" %></td>
+              <td class="event_content"><%= event.content %></td>
+              <td class="del_btn">
+                <%= link_to event_path(event.id), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+                  <i class="fa-solid fa-trash"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <%= link_to new_event_path, class: 'event-btn' do %>
   <span class='event-btn-text'><i class="fa-regular fa-pen-to-square"></i><%= '予定を追加' %></span>
