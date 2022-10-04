@@ -17,9 +17,6 @@
 .wday-6 {
   color: blue;
   background-color: #ecefff;
-} 
-.day:hover {
-  background-color: aquamarine;
 }
 
 .event_count{
@@ -28,8 +25,25 @@
 li{
   list-style: none;
 }
-.event_name{
+.list_title{
+  font-size: large;
+  margin-bottom: 5px;
+}
+.event_list{
   color: black;
+  background-color: lightgoldenrodyellow;
+  min-height: 200px;
+  width: 300px;
+  border: #3ccace 5px solid;
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  right: 500px;
+  top: 10%;
+  background-color: #ffffff;
+}
+.hidden{
+  display: none;
 }
 
 /* 予定追加ボタン */

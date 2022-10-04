@@ -3,14 +3,13 @@
   <% unless events.blank? %>
     <div class="event_count" >
       <%= "#{events.length}件の予定" %>
+      <ul class="event_list hidden">
+        <li class="list_title"><%= "#{date.month}月#{date.day}日の予定" %></li>
+        <% events.each do |event| %>
+          <li><%= event.title %></li>
+        <% end %>
+      </ul>
     </div>
-  <% end %>
-  <% events.each do |event| %>
-  <div class="event_name">
-    <ul class="show-lists">
-      <li><%= event.title %></li>
-    </ul>
-  </div>
   <% end %>
 <% end %>
 
