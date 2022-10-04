@@ -1,23 +1,33 @@
-<%= form_with(model: @event, local: true) do |form| %>
+<%= form_with(model: @event, class: 'form-main', local: true) do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
 
-  <div class="title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">Title</label>
+        </div>
+        <%= f.text_area :title, class:"input-default" %>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">Date</label>
+        </div>
+        <div class="form-time">
+          <%= f.datetime_select :start_time, class:"time" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">Content</label>
+        </div>
+        <%= f.text_area :content, class:"input-default large" %>
+      </div>
+
+      <div class="submit">
+        <%= f.submit class:"submit-btn" %>
+      </div>
+    </div>
   </div>
-
-    <div class="time">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
-  </div>
-
-  <div class="content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-
-
-  <div class="submit">
-    <%= form.submit %>
-  </div>
-
 <% end %>
