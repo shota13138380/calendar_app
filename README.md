@@ -1,24 +1,104 @@
-# README
+## アプリケーション概要
+### アプリケーション名
+Calendar-app
+### コンセプト
+シンプルなカレンダー  
+簡単に予定を追加、今後の予定を一覧で確認できる
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## URL
+https://calendar-app-38380.herokuapp.com/
 
-Things you may want to cover:
+## テスト用アカウント
+  - テスト１
+    - メールアドレス名：test@mail
+    - パスワード：test11
+  - テスト2
+    - メールアドレス：test2@mail
+    - パスワード：test22
 
-* Ruby version
+## 機能一覧
+- ユーザー管理機能
+	- 新規登録機能
+	- ログイン機能
+- 投稿機能
+  - 予定の追加
+  - 予定の編集・削除
 
-* System dependencies
+## 利用方法
+**■ 権限** <br>
+- ログアウトユーザー
+  - ログイン/新規登録
+  - カレンダー表示
 
-* Configuration
+- ログインユーザー
+  - ログアウト/予定追加
+  - 予定の編集・削除
+  - 日別の予定表示
+  - 未来日の予定一覧表示
 
-* Database creation
+**■ 新規登録** <br>
+- ページ右下のボタンから新規登録ページへ遷移します。
+- フォームの項目を埋め`新規登録`ボタンを押すことで登録できます。
 
-* Database initialization
+**■ ログイン** <br>
+- ページ左下のボタンからログインページへ遷移します。
+- 登録したemailとpasswordを入力してログインできます。
 
-* How to run the test suite
+**■ ログアウト** <br>
+- ページ左下のボタンからログアウトできます。
 
-* Services (job queues, cache servers, search engines, etc.)
+**■ 予定を追加** <br>
+- ページ右下のボタンから予定追加ページへ遷移します。
+- フォームの項目を埋め`Create Event`ボタンを押すことで投稿できます。
 
-* Deployment instructions
+**■ 日別の予定一覧** <br>
+- カレンダー部分の`「◯件の予定」`をクリックするとその日の予定一覧が表示されます。
+- 表示された一覧は右上の`×`ボタンで閉じることができます。
 
-* ...
+**■ 未来日の予定一覧** <br>
+- ページ下部に今後の予定が一覧で表示されます。
+
+**■ 予定編集** <br>
+- 予定一覧の左端のタイトルをクリックすると編集ページへ遷移します。
+
+**■ 予定削除** <br>
+- 予定一覧の右端のボタンから削除が行えます。
+
+## 開発環境
+- HTML,CSS
+- Ruby 2.6.5
+- Ruby on Rails 6.0.0
+- MySQL 14.14
+- JavaScript
+- heroku
+
+## 工夫したポイント
+**■ 予定の一覧表示** <br>
+今後の予定が確認しやすいように未来日の予定のみの一覧を表示するように実装しました。  
+また、日別に何件の予定があるのかを分かりやすくするためにカレンダー内には予定件数のみを表示し、それをクリックすることでその日の予定を確認できるようにしました。  
+
+
+# テーブル
+## users テーブル
+
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| name               | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
+
+### Association
+
+- has_many :events
+
+## events テーブル
+
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| title      | string     | null: false                    |
+| content    | text       | null: false                    |
+| start_time | datetime   | null: false                    |
+
+### Association
+
+- belongs_to :user
