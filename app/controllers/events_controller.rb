@@ -1,8 +1,13 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_beginning_of_week
 
   def index
-    @events = Event.all.order("start_time ASC")
+    if user_signed_in?
+      @events = Event.where(user_id: current_user.id).order("start_time ASC")
+    else
+      @events = []
+    end
   end
 
   def new
@@ -20,6 +25,7 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    redirect_to root_path unless current_user.id == @event.user_id
   end
 
   def update
@@ -40,11 +46,10 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :content, :start_time)
+    params.require(:event).permit(:title, :content, :start_time).merge(user_id: current_user.id)
   end
 
   def set_beginning_of_week
     Date.beginning_of_week = :sunday
   end  
-
 end

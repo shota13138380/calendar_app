@@ -46,6 +46,18 @@
   </div>
 </div>
 
-<%= link_to new_event_path, class: 'event-btn' do %>
-  <span class='event-btn-text'><i class="fa-regular fa-pen-to-square"></i><%= '予定を追加' %></span>
+<% if user_signed_in? %>
+  <div class='user-btn'>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+  </div>
+  <%= link_to new_event_path, class: 'event-btn' do %>
+    <span class='event-btn-text'><i class="fa-regular fa-pen-to-square"></i><%= '予定を追加' %></span>
+  <% end %>
+<% else %>
+  <div class='user-btn'>
+    <%= link_to 'ログイン', new_user_session_path %>
+  </div>
+  <div class='event-btn'>
+    <%= link_to '新規登録', new_user_registration_path, class: 'event-btn-text' %>
+  </div>
 <% end %>
