@@ -26,6 +26,10 @@
 .event_count{
   color: black;
 }
+.event_count:hover{
+  color: gray;
+  text-decoration: underline;
+}
 li{
   list-style: none;
 }
