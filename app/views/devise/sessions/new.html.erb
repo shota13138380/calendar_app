@@ -1,0 +1,24 @@
+<h1 class='form-header-text'>ユーザーログイン</h1>
+<%= form_with model: @user, url: user_session_path, class: 'form-main', local: true do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">メールアドレス</label>
+        </div>
+        <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email", class:"input-default" %>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">パスワード（6文字以上）</label>
+        </div>
+        <%= f.password_field :password, id:"user_password", autocomplete: "current-password", class:"input-default" %>
+      </div>
+
+      <div class="submit">
+        <%= f.submit "ログイン", class:"submit-btn" %>
+      </div>
+    </div>
+  </div>
+<% end %>

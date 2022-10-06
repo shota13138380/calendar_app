@@ -89,28 +89,6 @@ li{
   color: black;
 }
 
-/* 予定追加ボタン */
-.event-btn {
-  background: #3ccace;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 30px;
-  bottom: 32px;
-  right: 32px;
-  position: fixed;
-  padding: 15px;
-  box-shadow: 2px 2px 4px gray;
-}
-.event-btn-text {
-  color: #fff;
-  display: block;
-  font-size: 18px;
-  text-decoration: none;
-}
-.event-btn:hover {
-  box-shadow: none;
-}
-
 /* フォーム */
 .form-header-text {
   height: 60px;
@@ -190,4 +168,62 @@ li{
   font-size: 14px;
   cursor: pointer;
   border-radius: 4px;
+}
+
+/* エラーメッセージ */
+
+.error-alert {
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+
+.error-message {
+  font-size: 1.8vw;
+  list-style: none;
+  color: rgb(182, 48, 0);
+}
+
+/* ユーザーボタン */
+.user-btn {
+  background: #3ccace;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px;
+  bottom: 32px;
+  left: 32px;
+  position: fixed;
+  padding: 15px;
+  box-shadow: 2px 2px 4px gray;
+}
+.user-btn a {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+}
+.user-btn:hover {
+  box-shadow: none;
+}
+
+/* 予定追加ボタン */
+.event-btn {
+  background: #3ccace;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  box-shadow: 2px 2px 4px gray;
+}
+.event-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+}
+.event-btn:hover {
+  box-shadow: none;
 }
