@@ -5,6 +5,11 @@ window.addEventListener('load', function(){
 
   eventLists.forEach(function(eventList) {
     eventList.addEventListener('click', function(){
+      eventLists.forEach(function(eventList) {
+        if (eventList.firstElementChild.style.display == 'block') {
+          eventList.firstElementChild.style.display = 'none';
+        }
+      })
       eventList.firstElementChild.style.display = 'block';
     })
 
