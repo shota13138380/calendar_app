@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_beginning_of_week
 
   def index
-    @events = Event.all
+    @events = Event.all.order("start_time ASC")
   end
 
   def new
@@ -11,8 +11,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    if @event.valid?
-      @event.save
+    if @event.save
       redirect_to root_path
     else
       render :new
