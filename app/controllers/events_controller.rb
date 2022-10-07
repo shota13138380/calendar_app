@@ -3,11 +3,11 @@ class EventsController < ApplicationController
   before_action :set_beginning_of_week
 
   def index
-    if user_signed_in?
-      @events = Event.where(user_id: current_user.id).order("start_time ASC")
-    else
-      @events = []
-    end
+    @events = if user_signed_in?
+                Event.where(user_id: current_user.id).order('start_time ASC')
+              else
+                []
+              end
   end
 
   def new
@@ -51,5 +51,5 @@ class EventsController < ApplicationController
 
   def set_beginning_of_week
     Date.beginning_of_week = :sunday
-  end  
+  end
 end
