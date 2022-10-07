@@ -23,6 +23,11 @@
   background-color: #ecefff;
 }
 
+.holiday_name{
+  font-size: small;
+  color: red;
+}
+
 .event_count{
   color: black;
 }

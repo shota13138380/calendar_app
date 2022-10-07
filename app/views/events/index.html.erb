@@ -1,5 +1,8 @@
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
+  <% if HolidayJp.holiday?(date) %>
+    <span class="holiday_name"><%= HolidayJp.between(date,date).first.name %></span>
+  <% end %>
   <% unless events.blank? %>
     <div class="event_count" >
       <%= "#{events.length}件の予定" %>
