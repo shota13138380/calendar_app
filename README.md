@@ -1,4 +1,5 @@
 ## アプリケーション概要
+![logo](https://user-images.githubusercontent.com/111602501/194476696-30ffc79c-cebd-4ef5-ba5f-5e5e85ccf709.png)
 ### アプリケーション名
 Calendar-app
 ### コンセプト
@@ -54,9 +55,11 @@ https://calendar-app-38380.herokuapp.com/
 **■ 日別の予定一覧** <br>
 - カレンダー部分の`「◯件の予定」`をクリックするとその日の予定一覧が表示されます。
 - 表示された一覧は右上の`×`ボタンで閉じることができます。
+![dayevents](https://user-images.githubusercontent.com/111602501/194478199-76b5f37e-7a6f-4617-999e-d6877471a126.gif)
 
 **■ 未来日の予定一覧** <br>
 - ページ下部に今後の予定が一覧で表示されます。
+![futureevents](https://user-images.githubusercontent.com/111602501/194478509-f3bd1613-32cd-4abf-a237-1a305226325f.png)
 
 **■ 予定編集** <br>
 - 予定一覧の左端のタイトルをクリックすると編集ページへ遷移します。
@@ -68,6 +71,8 @@ https://calendar-app-38380.herokuapp.com/
 - HTML,CSS
 - Ruby 2.6.5
 - Ruby on Rails 6.0.0
+  - devise
+  - simple_calendar
 - MySQL 14.14
 - JavaScript
 - heroku
@@ -76,6 +81,7 @@ https://calendar-app-38380.herokuapp.com/
 **■ 予定の一覧表示** <br>
 今後の予定が確認しやすいように未来日の予定のみの一覧を表示するように実装しました。  
 また、日別に何件の予定があるのかを分かりやすくするためにカレンダー内には予定件数のみを表示し、それをクリックすることでその日の予定を確認できるようにしました。  
+ページ遷移を減らすためフォームの入力以外はトップページのみで行えるようにしました。
 
 
 # テーブル
