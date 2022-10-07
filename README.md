@@ -73,6 +73,7 @@ https://calendar-app-38380.herokuapp.com/
 - Ruby on Rails 6.0.0
   - devise
   - simple_calendar
+  - holiday_jp
 - MySQL 14.14
 - JavaScript
 - heroku
