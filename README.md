@@ -67,6 +67,9 @@ https://calendar-app-38380.herokuapp.com/
 **■ 予定削除** <br>
 - 予定一覧の右端のボタンから削除が行えます。
 
+## 要件定義
+https://docs.google.com/spreadsheets/d/1Qofm7ugGVrcfkAmD1hLeoVQjZyO91pH-SUx9o76g2Y4/edit#gid=982722306
+
 ## 開発環境
 - HTML,CSS
 - Ruby 2.6.5
