@@ -232,3 +232,30 @@ li{
 .event-btn:hover {
   box-shadow: none;
 }
+
+/* 横向き */
+@media (max-height: 100vw) {
+  .main_contents {
+    height: calc(100vh - 150px);
+    display: flex;
+  }
+  .simple-calendar{
+    width: 50%;
+    font-size: small;
+  }
+  .calendar-heading{
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .future_events{
+    height: 100%;
+    width: 50%;
+    font-size: small;
+  }
+  .future_events h1{
+    font-size: 30px;
+    line-height: 30px;
+    padding: 15px;
+    margin: 0;
+  }
+}

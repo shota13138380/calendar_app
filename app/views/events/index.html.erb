@@ -1,3 +1,4 @@
+<div class="main_contents">
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
   <% if HolidayJp.holiday?(date) %>
@@ -50,7 +51,7 @@
     </div>
   </div>
 <% end %>
-
+</div>
 <% if user_signed_in? %>
   <div class='user-btn'>
     <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
