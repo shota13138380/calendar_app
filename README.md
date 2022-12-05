@@ -7,7 +7,7 @@ Calendar-app
 簡単に予定を追加、今後の予定を一覧で確認できる
 
 ## URL
-https://calendar-app-38380.herokuapp.com/
+https://calendar-app-38380.onrender.com/
 
 ## テスト用アカウント
   - テスト１
